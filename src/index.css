@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #f58220;
+  --color-secondary: #fef3e9;
+  --color-light: #fef0e5;
+  --color-dark: #020617;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+/* 
+.customli:nth-last-child(2) {
+  margin-top: 170px;
+} */
