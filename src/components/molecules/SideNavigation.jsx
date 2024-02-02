@@ -1,7 +1,10 @@
 import {NavLink} from "react-router-dom";
 import {linksData} from "../../utils/data";
+import {useTranslation} from "react-i18next";
 
 const SideNavigation = () => {
+  const {t} = useTranslation();
+
   return (
     <ul className="flex flex-col gap-2 py-12  h-full relative">
       {linksData.map((link) => {
@@ -23,7 +26,7 @@ const SideNavigation = () => {
                 <span className="inline-flex items-center justify-center h-12 w-12 text-xl   ">
                   {link.icon}
                 </span>
-                <span className="text-md font-medium">{link.name}</span>
+                <span className="text-md font-medium">{t(link.name)}</span>
               </NavLink>
             </li>
           </>

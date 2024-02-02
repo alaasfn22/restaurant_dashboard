@@ -18,42 +18,42 @@ import veg_rice from "../assets/veg-rice-e40004d1.png";
 import garlic from "../assets/garlic-herb-bread-8a00951d.png";
 export const linksData = [
   {
-    name: "Dashboard",
+    name: "dashboard",
     path: "/",
     icon: <RxDashboard />,
   },
   {
-    name: "Manage ",
+    name: "manage",
     path: "/manage",
     icon: <MdOutlineManageSearch />,
   },
   {
-    name: "Restaurants",
+    name: "restaurants",
     path: "/restaurants",
     icon: <MdOutlineAddHomeWork />,
   },
   {
-    name: "Products",
+    name: "products",
     path: "/products",
     icon: <FiShoppingBag />,
   },
   {
-    name: "Orders",
+    name: "orders",
     path: "/orders",
     icon: <RiListOrdered2 />,
   },
   {
-    name: "Customers",
+    name: "customers",
     path: "/customers",
     icon: <TbUsers />,
   },
   {
-    name: "Settings",
+    name: "settings",
     path: "/settings",
     icon: <CiSettings />,
   },
   {
-    name: "Logout",
+    name: "logout",
     path: "/logout",
     icon: <IoIosLogOut />,
   },
@@ -105,5 +105,29 @@ export const productData = [
     name: "Garlic",
     img: garlic,
     price: 5,
+  },
+];
+
+export const cartData = [
+  {
+    id: 1,
+    img: pizza,
+    name: "Pizza",
+    price: 10,
+    qty: 2,
+  },
+  {
+    id: 2,
+    img: burger,
+    name: "burger",
+    price: 15,
+    qty: 1,
+  },
+  {
+    id: 3,
+    img: bakery,
+    name: "Bakery",
+    price: 5,
+    qty: 3,
   },
 ];

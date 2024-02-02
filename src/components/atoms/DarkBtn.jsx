@@ -4,7 +4,7 @@ const DarkBtn = () => {
   const {theme, toggleTheme} = useContextAPi();
 
   return (
-    <div className="fixed bottom-8 right-10 z-50">
+    <div className="fixed bottom-10 right-10 rtl:left-10 rtl:right-[95%]  z-50">
       <button
         onClick={toggleTheme}
         className="text-white bg-primary hover:bg-orange-400 focus:ring-2 focus:ring-primary font-semibold rounded-3xl text-md p-2 text-center "

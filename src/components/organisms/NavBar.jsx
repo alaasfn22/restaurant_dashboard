@@ -3,19 +3,19 @@ import {HiOutlineBellAlert} from "react-icons/hi2";
 import SideBarLogo from "../atoms/SideBarLogo";
 import {FaBarsStaggered} from "react-icons/fa6";
 import {useContextAPi} from "../../utils/ContextApi";
-import {GrLanguage} from "react-icons/gr";
 import {CiSettings} from "react-icons/ci";
 
 const NavBar = () => {
-  const {setOpen} = useContextAPi();
+  const {setOpen, changeLangToArbic, changeLangToEnglish, language} =
+    useContextAPi();
   return (
     <nav className="py-4 border-b text-3xl border-solid bg-whiteLight dark:bg-dark border-gray-200 px-2 lg:px-4">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className=" flex  items-center justify-between lg:justify-end">
-          <div className="lg:hidden flex items-center gap-1">
+          <div className="lg:hidden flex items-center  gap-1">
             <span
               onClick={() => setOpen(true)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 "
+              className="inline-flex items-center justify-center  rounded-md text-gray-400  cursor-pointer "
             >
               <FaBarsStaggered />
             </span>
@@ -25,7 +25,22 @@ const NavBar = () => {
           </div>
           <div className=" flex items-center gap-4 ">
             <span className="hidden  sm:inline-flex items-center justify-center gap-4 ">
-              <CustomeIconStyle icon={<GrLanguage className="w-5 h-5" />} />
+              {language === "ar" ? (
+                <span
+                  onClick={() => changeLangToEnglish()}
+                  className="inline-flex hover:text-primary font-semibold group text-gray-700 bg-customeGray cursor-pointer text-sm leading-none dark:text-white dark:bg-gray-800 p-1 rounded-full w-8 h-8 items-center justify-center"
+                >
+                  En
+                </span>
+              ) : (
+                <span
+                  onClick={() => changeLangToArbic()}
+                  className="inline-flex group  hover:text-primary font-semibold text-gray-700 bg-customeGray cursor-pointer text-sm leading-none dark:text-white dark:bg-gray-800 p-1 rounded-full w-8 h-8 items-center justify-center"
+                >
+                  ع
+                </span>
+              )}
+
               <CustomeIconStyle icon={<CiSettings />} />
               <span className="inline-flex relative">
                 <CustomeIconStyle icon={<HiOutlineBellAlert />} />
