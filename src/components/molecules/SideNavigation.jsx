@@ -15,7 +15,7 @@ const SideNavigation = () => {
               className="last:absolute last:bottom-4 last:left-0 last:right-0 px-4"
             >
               <NavLink
-                to="#"
+                to={link.path}
                 className="flex flex-row  items-center   py-2 rounded-md
                          h-12 transform hover:translate-x-2 transition-all ease-in duration-200
                           text-gray-500 hover:text-gray-800 hover:bg-customeGray

@@ -34,7 +34,7 @@ const HomePage = () => {
         </div>
         <ConatinerHeader containerTitle="products" path="path" />
         <div className=" grid grid-cols-2 md:grid-cols-4  lg:grid-cols-4 gap-4">
-          {productData.map((item, index) => {
+          {productData.slice(0, 4).map((item, index) => {
             return <ProductCard key={index} {...item} />;
           })}
         </div>

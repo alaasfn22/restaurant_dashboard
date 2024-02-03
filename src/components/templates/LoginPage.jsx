@@ -6,7 +6,7 @@ const LoginPage = () => {
   return (
     <div className="relative overflow-hidden">
       <div className="  bg-secondary bg-opacity-90 dark:bg-slate-800 w-screen h-screen flex justify-between rtl:flex-row-reverse  ">
-        <div className="overflow-hidden flex justify-center items-center w-full xl:w-1/2 z-10  ">
+        <div className="overflow-hidden flex rl justify-center items-center w-full xl:w-1/2 z-10  ">
           <LoginCard />
         </div>
         <div className=" hidden xl:w-1/2 xl:block relative z-10    ">

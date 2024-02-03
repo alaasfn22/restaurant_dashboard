@@ -11,29 +11,28 @@ export const ContextApi = createContext();
 
 const ContextApiProvider = ({children}) => {
   const {t} = useTranslation();
-
   const [open, setOpen] = useState(false);
-  const [theme, setTheme] = useState(localStorage.getItem("theme"));
   const [language, setLanguage] = useState(cookies.get("i18next") || "en");
-  document.documentElement.dir = i18n.dir(language);
   useEffect(() => {
     window.document.dir = i18n.dir(language);
     document.documentElement.dir = i18n.dir(language);
   }, [language]);
+  useEffect(() => {
+    document.documentElement.dir = i18n.dir(language);
+    document.documentElement.lang = i18n.language;
+  }, []);
   const changeLangToArbic = () => {
     i18n.changeLanguage("ar");
     cookies.set("i18next", "ar");
-    document.documentElement.dir = "rtl";
-    document.documentElement.lang = "ar";
     setLanguage("ar");
   };
   const changeLangToEnglish = () => {
     i18n.changeLanguage("en");
     cookies.set("i18next", "en");
-    document.documentElement.dir = "ltr";
-    document.documentElement.lang = "en";
     setLanguage("en");
   };
+
+  const [theme, setTheme] = useState(localStorage.getItem("theme"));
   useEffect(() => {
     if (localStorage.getItem("theme")) {
       setTheme(localStorage.getItem("theme"));

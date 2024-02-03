@@ -65,6 +65,8 @@
   "payment": "الدفع",
   "total paid": "المجموع المدفوع",
   "total due": "المجموع المستحق",
+  "total product": "مجموع المنتجات",
+  "total sales": "مجموع المبيعات",
   "order updated successfully": "تم تحديث الطلب بنجاح",
   "order updated successfully.": "تم تحديث الطلب بنجاح.",
   "update order": "تحديث الطلب",
@@ -81,5 +83,6 @@
   "update order status.": "تحديث حالة الطلب.",
   "order status updated.": "تم تحديث حالة الطلب.",
   "Cairo Street": " شارع القاهرة",
+  "Products list": "قائمة المنتجات",
   "Indulge in our mouthwatering burgers and double the delight with our exclusive BOGO deal! ": "انغمس في شطائر البرغر الشهية لدينا وضاعف البهجة مع عرض BOGO الحصري الخاص بنا!"
 }

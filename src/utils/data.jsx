@@ -24,12 +24,12 @@ export const linksData = [
   },
   {
     name: "manage",
-    path: "/manage",
+    path: "#",
     icon: <MdOutlineManageSearch />,
   },
   {
     name: "restaurants",
-    path: "/restaurants",
+    path: "/restuarants",
     icon: <MdOutlineAddHomeWork />,
   },
   {
@@ -39,7 +39,7 @@ export const linksData = [
   },
   {
     name: "orders",
-    path: "/orders",
+    path: "#",
     icon: <RiListOrdered2 />,
   },
   {
@@ -49,12 +49,12 @@ export const linksData = [
   },
   {
     name: "settings",
-    path: "/settings",
+    path: "#",
     icon: <CiSettings />,
   },
   {
     name: "logout",
-    path: "/logout",
+    path: "#",
     icon: <IoIosLogOut />,
   },
 ];
@@ -90,21 +90,60 @@ export const productData = [
     name: "Noodles",
     img: noodles,
     price: 10,
+    qty: 1,
+    createBy: "admin",
+    type: "noodles",
   },
   {
     name: "Red Velvet",
     img: red_velvet,
     price: 15,
+    qty: 6,
+    createBy: "admin",
+    type: "Cake",
   },
   {
     name: "Veg Rice",
     img: veg_rice,
     price: 20,
+    qty: 4,
+    createBy: "admin",
+    type: "veg rice",
   },
   {
     name: "Garlic",
     img: garlic,
     price: 5,
+    qty: 10,
+    createBy: "admin",
+    type: "Garlic",
+  },
+  {
+    id: 4,
+    img: seafood,
+    name: "Seafood",
+    price: 20,
+    qty: 3,
+    createBy: "admin",
+    type: "Seafood",
+  },
+  {
+    id: 5,
+    img: gelato,
+    name: "Gelato",
+    price: 10,
+    qty: 4,
+    createBy: "admin",
+    type: "Gelato",
+  },
+  {
+    id: 6,
+    img: bubble,
+    name: "Bubble Tea",
+    price: 15,
+    qty: 8,
+    createBy: "admin",
+    type: "bubble tea",
   },
 ];
 

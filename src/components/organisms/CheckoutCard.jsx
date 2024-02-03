@@ -65,8 +65,8 @@ const CheckoutCard = ({t}) => {
           </div>
         </div>
         <div className="flex flex-col gap-4">
-          <CustomeButton title={t("checkout")} />
-          <CustomeOpcityBtn title={t("have a coupon code?")} />
+          <CustomeButton t={t} title="checkout" />
+          <CustomeOpcityBtn t={t} title="have a coupon code?" />
         </div>
       </div>
     </div>
