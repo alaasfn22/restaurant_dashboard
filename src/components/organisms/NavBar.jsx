@@ -25,22 +25,6 @@ const NavBar = () => {
           </div>
           <div className=" flex items-center gap-4 ">
             <span className="hidden  sm:inline-flex items-center justify-center gap-4 ">
-              {language === "ar" ? (
-                <span
-                  onClick={() => changeLangToEnglish()}
-                  className="inline-flex hover:text-primary font-semibold group text-gray-700 bg-customeGray cursor-pointer text-sm leading-none dark:text-white dark:bg-gray-800 p-1 rounded-full w-8 h-8 items-center justify-center"
-                >
-                  En
-                </span>
-              ) : (
-                <span
-                  onClick={() => changeLangToArbic()}
-                  className="inline-flex group  hover:text-primary font-semibold text-gray-700 bg-customeGray cursor-pointer text-sm leading-none dark:text-white dark:bg-gray-800 p-1 rounded-full w-8 h-8 items-center justify-center"
-                >
-                  ع
-                </span>
-              )}
-
               <CustomeIconStyle icon={<CiSettings />} />
               <span className="inline-flex relative">
                 <CustomeIconStyle icon={<HiOutlineBellAlert />} />
@@ -51,6 +35,21 @@ const NavBar = () => {
               </span>
             </span>
             <div className="flex items-center  gap-3">
+              {language === "ar" ? (
+                <span
+                  onClick={() => changeLangToEnglish()}
+                  className="inline-flex hover:text-primary font-semibold group text-gray-700 bg-customeGray cursor-pointer text-sm  dark:text-white dark:bg-gray-800 p-1 rounded-full w-8 h-8 items-center justify-center"
+                >
+                  En
+                </span>
+              ) : (
+                <span
+                  onClick={() => changeLangToArbic()}
+                  className="inline-flex group  hover:text-primary font-semibold text-gray-700 bg-customeGray cursor-pointer text-sm  dark:text-white dark:bg-gray-800 p-1 rounded-full w-8 h-8  justify-center"
+                >
+                  ع
+                </span>
+              )}
               <span className=" cursor-pointer flex border rounded-full bg-gray-800 text-sm ">
                 <img
                   className="h-8 w-8 rounded-full"
