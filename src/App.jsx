@@ -6,15 +6,22 @@ import NavLayout from "./components/templates/NavLayout";
 import Restaurant from "./components/pages/Restaurant";
 import Home from "./components/pages/Home";
 import Products from "./components/pages/Products";
+import AuthProtected from "./components/templates/AuthProtected";
 
 const router = createBrowserRouter([
   {
-    path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "/register",
-    element: <Register />,
+    path: "",
+    element: <AuthProtected />,
+    children: [
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
+      },
+    ],
   },
   {
     path: "",

@@ -19,7 +19,7 @@ const BanerCard = ({t}) => {
             )}
           </p>
           <span className="w-40">
-            <CustomeButton t={t} title="order now" />
+            <CustomeButton t={t} title="order now" path="#" />
           </span>
         </div>
       </div>

@@ -101,17 +101,19 @@ const ProductsTable = () => {
   );
   const subHeaderComponentMemo = useMemo(() => {
     return (
-      <div className="pb-4 w-full sm:w-64">
+      <div className="pb-4 w-full sm:w-64 ">
         <CustomeInputs
           id="search"
           type="text"
-          placeholder="Filter By Name"
+          placeholder={t("search by name")}
+          autoComplete
           onChange={(e) => setFilterText(e.target.value)}
           value={filterText}
+          t={t}
         />
       </div>
     );
-  }, [filterText]);
+  }, [filterText, t]);
 
   return (
     <div className=" overflow-hidden p-2">
@@ -130,6 +132,7 @@ const ProductsTable = () => {
         customStyles={customStyles}
         theme={theme === "dark" ? "solarized" : ""}
         subHeaderComponent={subHeaderComponentMemo}
+        subHeaderAlign="left"
       />
     </div>
   );

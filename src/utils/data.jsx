@@ -44,7 +44,7 @@ export const linksData = [
   },
   {
     name: "customers",
-    path: "/customers",
+    path: "#",
     icon: <TbUsers />,
   },
   {

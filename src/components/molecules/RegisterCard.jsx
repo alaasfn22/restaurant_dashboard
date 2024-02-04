@@ -1,49 +1,53 @@
+/* eslint-disable react/prop-types */
 import {Link} from "react-router-dom";
 import CustomeInputs from "../atoms/CustomeInputs";
 import CustomeButton from "../atoms/customeButton";
 
-const RegisterCard = () => {
+const RegisterCard = ({t}) => {
   return (
     <>
       {/* This is an example component */}
       <div className="w-full max-w-lg   mx-auto">
         <div className=" w-full p-4 sm:p-6 lg:p-8 ">
           <form className="space-y-6">
-            <h3 className="text-xl text-center font-medium text-gray-900 dark:text-white">
-              Register
+            <h3 className="text-xl text-center capitalize font-medium text-gray-900 dark:text-white">
+              {t("register")}
             </h3>
             <CustomeInputs
               type="text"
-              placeholder="Enter your name"
-              name="full name"
+              placeholder={t("enter your name")}
+              name={t("full name")}
               id="fullname"
-              autoComplete="fullname"
+              autoComplete
               required
+              t={t}
             />
             <CustomeInputs
               type="email"
-              placeholder="Email"
-              name="email"
+              placeholder={t("enter your email")}
+              name={t("email")}
               id="email"
               autoComplete="email"
               required
+              t={t}
             />
             <CustomeInputs
               type="password"
-              placeholder="Password"
-              name="password"
+              placeholder={t("enter your password")}
+              name={t("password")}
               id="password"
               autoComplete="current-password"
               required
-            />
-            <CustomeButton title="Sign in" />
+              t={t}
+            />{" "}
+            <CustomeButton t={t} title="create account" />
             <div className="text-sm font-medium text-gray-500 dark:text-gray-300 flex justify-center">
-              Already have an account ?{" "}
+              {t("already have an account ?")}{" "}
               <Link
                 to="/login"
-                className="text-primary hover:underline dark:text-primary"
+                className="text-primary mx-1 capitalize hover:underline dark:text-primary"
               >
-                Login
+                {t("login")}
               </Link>
             </div>
           </form>
