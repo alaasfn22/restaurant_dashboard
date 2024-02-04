@@ -14,7 +14,7 @@ const ProductsPage = () => {
           <CustomeButton t={t} title="add product" />
         </div>
       </div>
-      <ProductsTable />
+      {/* <ProductsTable /> */}
     </div>
   );
 };
