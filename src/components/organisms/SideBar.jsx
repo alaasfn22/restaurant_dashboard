@@ -19,8 +19,10 @@ const SideBar = () => {
       {/* mobile */}
       <div
         className={` ${
-          open ? "translate-x-0  " : "-translate-x-full rtl:translate-x-full  "
-        } fixed top-0 bottom-0 ltr:left-0  rtl:right-0 transition-transform ease-linear duration-300 z-50 lg:hidden  w-full`}
+          open
+            ? "translate-x-0  "
+            : "-translate-x-full hidden rtl:translate-x-full  "
+        } fixed  top-0 bottom-0 ltr:left-0  rtl:right-0 transition-transform ease-linear duration-300 z-50 lg:hidden  w-full`}
       >
         <div className="flex w-full h-full ">
           <div className="flex flex-col w-56 h-full overflow-auto bg-whiteLight dark:bg-dark border-r rtl:border-l rtl:border-r-0">
