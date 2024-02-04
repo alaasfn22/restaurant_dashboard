@@ -1,5 +1,6 @@
 import {useContextAPi} from "../../utils/ContextApi";
 import ProductsTable from "../organisms/ProductsTable";
+import CustomeButton from "../atoms/CustomeButton";
 
 const ProductsPage = () => {
   const {t} = useContextAPi();
@@ -9,7 +10,9 @@ const ProductsPage = () => {
         <h1 className="text-xl font-semibold dark:text-white capitalize">
           {t("products list")}
         </h1>
-        <div>{/* <CustomeButton t={t} title="add product" /> */}</div>
+        <div>
+          <CustomeButton t={t} title="add product" />
+        </div>
       </div>
       <ProductsTable />
     </div>

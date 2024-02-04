@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import offer from "../../assets/offer-bg2-f01b95e8.png";
-import CustomeButton from "../atoms/customeButton";
+import CustomeButton from "../atoms/CustomeButton";
 const BanerCard = ({t}) => {
   return (
     <div className="w-full h-72  ">
@@ -19,7 +19,7 @@ const BanerCard = ({t}) => {
             )}
           </p>
           <span className="w-40">
-            <CustomeButton t={t} title="order now" path="#" />
+            <CustomeButton t={t} title="order now" />
           </span>
         </div>
       </div>

@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import {cartData} from "../../utils/data";
+import CustomeButton from "../atoms/CustomeButton";
 import CustomeOpcityBtn from "../atoms/CustomeOpcityBtn";
-import CustomeButton from "../atoms/customeButton";
 import CartCard from "../molecules/CartCard";
 import CheckoutBaner from "../molecules/CheckoutBaner";
 

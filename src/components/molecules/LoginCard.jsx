@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import {useState} from "react";
 import CustomeInputs from "../atoms/CustomeInputs";
-import CustomeButton from "../atoms/customeButton";
 import {Link} from "react-router-dom";
+import CustomeButton from "../atoms/CustomeButton";
 
 const LoginCard = ({t}) => {
   const [inputValue, setInputValue] = useState({

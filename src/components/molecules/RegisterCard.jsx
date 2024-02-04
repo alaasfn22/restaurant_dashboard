@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import {Link} from "react-router-dom";
 import CustomeInputs from "../atoms/CustomeInputs";
-import CustomeButton from "../atoms/customeButton";
+import CustomeButton from "../atoms/CustomeButton";
 
 const RegisterCard = ({t}) => {
   return (

@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import {IoLocationOutline} from "react-icons/io5";
 import resImg from "../../assets/2-95b90f07.png";
-import CustomeButton from "../atoms/customeButton";
 import {MdOutlineMail} from "react-icons/md";
 import {FiPhone} from "react-icons/fi";
+import CustomeButton from "../atoms/CustomeButton";
 const RestaurantCard = ({t}) => {
   return (
     <div>
