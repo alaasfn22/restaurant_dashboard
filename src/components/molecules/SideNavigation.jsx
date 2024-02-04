@@ -12,7 +12,7 @@ const SideNavigation = () => {
           <>
             <li
               key={link.id}
-              className="last:absolute last:bottom-4 last:left-0 last:right-0 px-4"
+              className="last:absolute last:bottom-8 last:left-0 last:right-0 px-4"
             >
               <NavLink
                 to={link.path}
