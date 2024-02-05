@@ -63,6 +63,10 @@
   "tax": "ضريبة",
   "shipping": "الشحن",
   "payment": "الدفع",
+  "price": "السعر",
+  "description": "الوصف",
+  "type": "النوع",
+  "quantity": "الكمية",
   "total paid": "المجموع المدفوع",
   "total due": "المجموع المستحق",
   "total product": "مجموع المنتجات",
@@ -104,5 +108,8 @@
   "full name": "الاسم الكامل",
   "search by name": "بحث حسب الاسم",
   "products list": "قائمة المنتجات",
+  "product quantity": "كمية المنتج",
+  "product price": "سعر المنتج",
+  "add new product": "اضافة منتج جديد",
   "Indulge in our mouthwatering burgers and double the delight with our exclusive BOGO deal! ": "انغمس في شطائر البرغر الشهية لدينا وضاعف البهجة مع عرض BOGO الحصري الخاص بنا!"
 }

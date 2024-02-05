@@ -7,6 +7,8 @@ import Restaurant from "./components/pages/Restaurant";
 import Home from "./components/pages/Home";
 import Products from "./components/pages/Products";
 import AuthProtected from "./components/templates/AuthProtected";
+import AddedProductModel from "./components/organisms/AddedProductModel";
+import ViewProductDetailsModel from "./components/organisms/View_Product_Details_Model";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +45,16 @@ const router = createBrowserRouter([
           {
             path: "/products",
             element: <Products />,
+            children: [
+              {
+                path: "/products/add-product",
+                element: <AddedProductModel />,
+              },
+              {
+                path: "/products/product-details/",
+                element: <ViewProductDetailsModel />,
+              },
+            ],
           },
         ],
       },
@@ -56,7 +68,11 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <div>
+      <RouterProvider router={router} />
+    </div>
+  );
 }
 
 export default App;

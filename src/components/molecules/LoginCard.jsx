@@ -45,7 +45,9 @@ const LoginCard = ({t}) => {
               required
               t={t}
             />
-            <CustomeButton t={t} title="sign in" />
+            <div className="flex items-center justify-between">
+              <CustomeButton t={t} title="sign in" />
+            </div>
             <div className="text-sm font-medium mt-4 capitalize text-gray-500 dark:text-gray-300 flex justify-center ">
               {t("dont have an account ?")}{" "}
               <Link

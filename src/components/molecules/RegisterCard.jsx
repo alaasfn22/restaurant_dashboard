@@ -40,7 +40,9 @@ const RegisterCard = ({t}) => {
               required
               t={t}
             />{" "}
-            <CustomeButton t={t} title="create account" />
+            <div className="flex justify-center itcems-center">
+              <CustomeButton t={t} title="create account" />
+            </div>
             <div className="text-sm font-medium text-gray-500 dark:text-gray-300 flex justify-center">
               {t("already have an account ?")}{" "}
               <Link

@@ -4,9 +4,13 @@ import {useContextAPi} from "../../utils/ContextApi";
 import CustomeInputs from "../atoms/CustomeInputs";
 import {useMemo, useState} from "react";
 import {productData} from "../../utils/data";
+import {RiDeleteBin5Line} from "react-icons/ri";
+import {IoEyeOutline} from "react-icons/io5";
+import {Link} from "react-router-dom";
 
 const ProductsTable = () => {
   const {theme, language, t} = useContextAPi();
+
   const customStyles = {
     rows: {
       style: {
@@ -29,6 +33,8 @@ const ProductsTable = () => {
         fontSize: "15px",
         fontWeight: "500",
         fontColor: "#64748B",
+        textTransform: "capitalize",
+        textAlign: "center",
       },
     },
   };
@@ -91,6 +97,27 @@ const ProductsTable = () => {
       name: `${language === "ar" ? "تم الاضافة بواسطة" : "Created By"}`,
       selector: (row) => t(row.createBy),
       sortable: true,
+    },
+    {
+      name: `${language === "ar" ? "الاجراءت" : "Actions"}`,
+      cell: (row) => (
+        <div className="flex items-center  gap-2">
+          <Link
+            to={`/products/product-details?id=${row.id}&&name=${row.name}&&qty=${row.qty}&&price=${row.price}&&type=${row.type}&&img=${row.img}`}
+            className="inline-flex justify-center items-center w-8 h-8 text-2xl hover:scale-125 dark:text-white hover:text-primary dark:hover:text-primary font-semibold"
+          >
+            <IoEyeOutline />
+          </Link>
+          <span
+            onClick={() => {
+              console.log(row);
+            }}
+            className=" inline-flex justify-center items-center w-8 h-8 text-2xl dark:text-white hover:scale-125 hover:text-red-500 dark:hover:text-red-500 font-semibold  "
+          >
+            <RiDeleteBin5Line />
+          </span>
+        </div>
+      ),
     },
   ];
 
