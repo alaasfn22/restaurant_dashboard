@@ -1,11 +1,11 @@
 /* eslint-disable no-unused-vars */
-import {Link, useSearchParams} from "react-router-dom";
-import CustomeButton from "../atoms/CustomeButton";
+import {useNavigate, useSearchParams} from "react-router-dom";
 import {useContextAPi} from "../../utils/ContextApi";
 import ProductDetailsCard from "../molecules/ProductDetailsCard";
 
 const ViewProductDetailsModel = () => {
   const {t} = useContextAPi();
+  const navigate = useNavigate();
   let [searchParams, setSearchParams] = useSearchParams();
 
   return (
@@ -16,20 +16,16 @@ const ViewProductDetailsModel = () => {
             <h3 className="text-2xl capitalize font=semibold">
               {t("add new product")}
             </h3>
-            <button className="bg-transparent border-0 text-black float-right">
-              <Link
-                to="/products"
-                className="dark:text-white cursor-pointer h-6 w-6 text-xl inline-flex hover:text-red-400 dark:hover:text-red-400  items-center justify-center "
-              >
+            <button
+              onClick={() => navigate(-1)}
+              className="bg-transparent border-0 text-black float-right"
+            >
+              <span className="dark:text-white cursor-pointer h-6 w-6 text-xl inline-flex hover:text-red-400 dark:hover:text-red-400  items-center justify-center ">
                 x
-              </Link>
+              </span>
             </button>
           </div>
           <div className="relative overflow-y-auto p-8 sm:px-12 flex-auto max-h-[420px]">
-            {/* <p>{searchParams.get("name")}</p>
-            <p>{searchParams.get("qty")}</p>
-            <p>{searchParams.get("price")}</p>
-            <img src={searchParams.get("img")} alt="" /> */}
             <ProductDetailsCard
               t={t}
               name={searchParams.get("name")}
@@ -38,18 +34,6 @@ const ViewProductDetailsModel = () => {
               qty={searchParams.get("qty")}
               type={searchParams.get("type")}
             />
-          </div>
-          <div className="flex items-center justify-center p-8 sm:px-12 w-full sm:w-1/2  gap-4 ">
-            <CustomeButton
-              t={t}
-              title="cancel"
-              style={{
-                background: "#ddd",
-                color: "black",
-              }}
-              path="/products"
-            />
-            <CustomeButton t={t} title="save" />
           </div>
         </div>
       </div>

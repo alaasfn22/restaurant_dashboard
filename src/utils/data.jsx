@@ -87,6 +87,7 @@ export const categoryData = [
 
 export const productData = [
   {
+    id: 1,
     name: "Noodles",
     img: noodles,
     price: 10,
@@ -95,6 +96,7 @@ export const productData = [
     type: "noodles",
   },
   {
+    id: 2,
     name: "Red Velvet",
     img: red_velvet,
     price: 15,
@@ -103,6 +105,7 @@ export const productData = [
     type: "Cake",
   },
   {
+    id: 3,
     name: "Veg Rice",
     img: veg_rice,
     price: 20,
@@ -111,6 +114,7 @@ export const productData = [
     type: "veg rice",
   },
   {
+    id: 4,
     name: "Garlic",
     img: garlic,
     price: 5,
@@ -119,7 +123,7 @@ export const productData = [
     type: "Garlic",
   },
   {
-    id: 4,
+    id: 5,
     img: seafood,
     name: "Seafood",
     price: 20,
@@ -128,7 +132,7 @@ export const productData = [
     type: "Seafood",
   },
   {
-    id: 5,
+    id: 6,
     img: gelato,
     name: "Gelato",
     price: 10,
@@ -137,7 +141,7 @@ export const productData = [
     type: "Gelato",
   },
   {
-    id: 6,
+    id: 7,
     img: bubble,
     name: "Bubble Tea",
     price: 15,

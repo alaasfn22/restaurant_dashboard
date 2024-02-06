@@ -3,8 +3,8 @@ const CheckoutBaner = ({t}) => {
   return (
     <div className="bg-no-repeat bg-cover capitalize bg-[url(.../../../../assets/offer-bg-fec3ece8.png)] bg-primary/10 rounded-lg">
       <div className="py-6 px-8">
-        <div className="flex sm:flex-row flex-col items-center gap-6">
-          <div className="sm:w-1/2 w-full flex items-center gap-6">
+        <div className="flex sm:flex-row flex-col justify-center items-center gap-6">
+          <div className="sm:w-1/2 w-full flex justify-center items-center gap-6">
             <div>
               <span className="inline-flex items-center justify-center h-14 w-14 bg-primary-200 text-primary shadow-md rounded-lg">
                 <svg

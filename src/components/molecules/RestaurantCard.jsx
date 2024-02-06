@@ -56,7 +56,11 @@ const RestaurantCard = ({t}) => {
             <p className="text-sm dark:text-white d">(123) 456-7890</p>
           </div>
         </div>
-        <CustomeButton t={t} title="view details" />
+        <CustomeButton
+          t={t}
+          title="view details"
+          path="/restuarants/restaurant-details/"
+        />
       </div>
     </div>
   );

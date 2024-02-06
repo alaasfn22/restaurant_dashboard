@@ -71,7 +71,7 @@ const ProductsTable = () => {
     {
       name: `${language === "ar" ? "الاسم" : "Name"}`,
       selector: (row) => (
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 min-w-[400px] ">
           <img src={row.img} alt="" className="w-10 h-10  object-cover" />
           {row.name}
         </div>

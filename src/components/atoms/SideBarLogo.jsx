@@ -5,11 +5,10 @@ const SideBarLogo = () => {
   const {theme} = useContextAPi();
   return (
     <div>
-      {theme === "light" && (
-        <img src={logo_dark} alt="logo" className="object-cover w-32   " />
-      )}
-      {theme === "dark" && (
+      {theme === "dark" ? (
         <img src={logo_light} alt="logo" className="object-cover w-32   " />
+      ) : (
+        <img src={logo_dark} alt="logo" className="object-cover w-32   " />
       )}
     </div>
   );
