@@ -17,7 +17,7 @@ const DarkBtn = () => {
 
   const handleScrollUp = () => {
     scroll.scrollToTop({
-      duration: 50, // Adjust the duration as needed
+      duration: 500, // Adjust the duration as needed
       smooth: "smooth", // You can choose different easing functions
     });
   };
@@ -28,7 +28,7 @@ const DarkBtn = () => {
         onClick={handleScrollUp}
         className={` ${
           up
-            ? "w-8 flex justify-center items-center transition-all duration-500 z-10 h-8"
+            ? "w-8 flex justify-center items-center transition-all duration-500 z-50 h-8"
             : "hidden"
         }`}
       >
