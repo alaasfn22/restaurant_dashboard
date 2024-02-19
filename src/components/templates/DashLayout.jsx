@@ -1,8 +1,9 @@
 import {Outlet, Navigate} from "react-router-dom";
 import SideBar from "../organisms/SideBar";
 import DarkBtn from "../atoms/DarkBtn";
+import Cookies from "js-cookie";
 const DashLayout = () => {
-  const token = true;
+  const token = Cookies.get("token");
   return (
     <>
       {token ? (

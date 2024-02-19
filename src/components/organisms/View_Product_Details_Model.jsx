@@ -32,7 +32,6 @@ const ViewProductDetailsModel = () => {
               img={searchParams.get("img")}
               price={searchParams.get("price")}
               qty={searchParams.get("qty")}
-              type={searchParams.get("type")}
             />
           </div>
         </div>

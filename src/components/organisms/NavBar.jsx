@@ -6,8 +6,9 @@ import {useContextAPi} from "../../utils/ContextApi";
 import {CiSettings} from "react-icons/ci";
 
 const NavBar = () => {
-  const {setOpen, changeLangToArbic, changeLangToEnglish, language} =
+  const {setOpen, changeLangToArbic, changeLangToEnglish, language, t} =
     useContextAPi();
+  // const user = JSON.parse(Cookies.get("user"));
   return (
     <nav className="py-4 border-b text-3xl border-solid bg-whiteLight dark:bg-dark border-gray-200 px-2 lg:px-4">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -58,8 +59,10 @@ const NavBar = () => {
                 />
               </span>
               <divs className="capitalize">
-                <h3 className="dark:text-gray-200 text-sm">alaa ali</h3>
-                <h3 className="text-gray-400 text-sm capitalize">admin</h3>
+                <h3 className="dark:text-gray-200 text-sm">alaa</h3>
+                <h3 className="text-gray-400 text-sm capitalize">
+                  {t("admin")}
+                </h3>
               </divs>
             </div>
           </div>

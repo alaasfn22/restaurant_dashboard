@@ -1,11 +1,11 @@
-import {useContextAPi} from "../../utils/ContextApi";
 import ProductsTable from "../organisms/ProductsTable";
 import CustomeButton from "../atoms/CustomeButton";
 import {Outlet} from "react-router-dom";
 import Helemt from "../molecules/Helemt";
+import Products_Hook from "../../hook/Products_Hook";
 
 const ProductsPage = () => {
-  const {t} = useContextAPi();
+  const [t, isLoading, data] = Products_Hook();
 
   return (
     <>
@@ -24,7 +24,7 @@ const ProductsPage = () => {
             />
           </div>
         </div>
-        <ProductsTable />
+        <ProductsTable data={data} isLoading={isLoading} />
         <Outlet />
       </div>
     </>

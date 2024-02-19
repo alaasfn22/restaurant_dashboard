@@ -14,9 +14,6 @@ const ProductDetailsCard = ({t, ...props}) => {
           <h2 className="mb-2 text-lg font-medium dark:text-white text-gray-900">
             {props.name}
           </h2>
-          <h2 className="mb-2 text-lg font-medium dark:text-white text-gray-900">
-            {t("type")}: {props.type}
-          </h2>
         </div>
 
         <div className="flex justify-center gap-8 items-center">

@@ -9,8 +9,8 @@ import Products from "./components/pages/Products";
 import AuthProtected from "./components/templates/AuthProtected";
 import AddedProductModel from "./components/organisms/AddedProductModel";
 import ViewProductDetailsModel from "./components/organisms/View_Product_Details_Model";
-import ViewRestDetailsModal from "./components/organisms/View_Rest_Details_Modal";
 import NotFound from "./components/pages/Not_Found";
+import RestaurantDetailsPage from "./components/pages/Restaurant_Details_Page";
 
 const router = createBrowserRouter([
   {
@@ -43,12 +43,10 @@ const router = createBrowserRouter([
           {
             path: "/restuarants",
             element: <Restaurant />,
-            children: [
-              {
-                path: "/restuarants/restaurant-details/",
-                element: <ViewRestDetailsModal />,
-              },
-            ],
+          },
+          {
+            path: "/restuarants-details/",
+            element: <RestaurantDetailsPage />,
           },
           {
             path: "/products",
