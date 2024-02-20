@@ -1,29 +1,37 @@
-import {useEffect, useMemo, useState} from "react";
-import {deleteProduct, searchProduct} from "../store/slice/ProductsSlice";
+import {useMemo, useState} from "react";
+import {
+  deleteProduct,
+  getAllProducts,
+  searchProduct,
+} from "../store/slice/ProductsSlice";
 import CustomeInputs from "../components/atoms/CustomeInputs";
 import {RiDeleteBin5Line} from "react-icons/ri";
 import {IoEyeOutline} from "react-icons/io5";
 import {Link} from "react-router-dom";
 import {useContextAPi} from "../utils/ContextApi";
 import {useDispatch, useSelector} from "react-redux";
-import {CustomeToast} from "../utils/Toastify";
+import {CustomeToast, customeContainer} from "../utils/Toastify";
 import {createTheme} from "react-data-table-component";
 
-const Product_Table_Hook = (data, isLoading) => {
+const Product_Table_Hook = (data) => {
   const {theme, language, t} = useContextAPi();
   const dispatch = useDispatch();
-  const deleteProductById = async (id) => {
+  const deleteProductById = async (proId) => {
+    const id = proId;
     await dispatch(deleteProduct(id));
-  };
-  const {error} = useSelector((state) => state.products);
-
-  useEffect(() => {
-    if (isLoading === false) {
-      if (error?.status === 401) {
-        CustomeToast("error", error?.data?.message);
-      }
+    if (products?.status === true) {
+      CustomeToast("success", t("product deleted successfully"));
     }
-  }, [isLoading, error]);
+    dispatch(getAllProducts());
+  };
+  const {products} = useSelector((state) => state.products);
+
+  let productData = [];
+  if (data) {
+    productData = data;
+  } else {
+    productData = [];
+  }
 
   const customStyles = {
     rows: {
@@ -81,64 +89,62 @@ const Product_Table_Hook = (data, isLoading) => {
     },
     "dark"
   );
-  const columns = [
-    {
-      name: "#",
-      selector: (row) => data?.indexOf(row) + 1,
-      sortable: true,
-    },
-    {
-      name: `${language === "ar" ? "الاسم" : "Name"}`,
-      selector: (row) => (
-        <div className="flex items-center gap-2 min-w-[500px] ">
-          <img src={row.image} alt="" className="w-10 h-10  object-cover" />
-          {row.name}
-        </div>
-      ),
-      sortable: true,
-    },
+  const columns = useMemo(
+    () => [
+      {
+        name: "#",
+        selector: (row) => data?.indexOf(row) + 1,
+        sortable: true,
+      },
+      {
+        name: `${language === "ar" ? "الاسم" : "Name"}`,
+        selector: (row) => (
+          <div className="flex items-center gap-2 min-w-[500px] ">
+            <img src={row.image} alt="" className="w-10 h-10  object-cover" />
+            {row.name}
+          </div>
+        ),
+        sortable: true,
+      },
 
-    {
-      name: `${language === "ar" ? "الكمية" : "Quantity"}`,
-      selector: (row) => row.quantity,
-      sortable: true,
-    },
-    {
-      name: `${language === "ar" ? "السعر" : "Price"}`,
-      selector: (row) => "$ " + row.price,
-      sortable: true,
-    },
+      {
+        name: `${language === "ar" ? "الكمية" : "Quantity"}`,
+        selector: (row) => row.quantity,
+        sortable: true,
+      },
+      {
+        name: `${language === "ar" ? "السعر" : "Price"}`,
+        selector: (row) => "$ " + row.price,
+        sortable: true,
+      },
 
-    {
-      name: `${language === "ar" ? "الاجراءت" : "Actions"}`,
-      cell: (row) => (
-        <div className="flex items-center  gap-2">
-          <Link
-            to={`/products/product-details?id=${row.id}&&name=${row.name}&&qty=${row.quantity}&&price=${row.price}&&img=${row.image}`}
-            className="inline-flex justify-center items-center w-8 h-8 text-2xl hover:scale-125 dark:text-white hover:text-primary dark:hover:text-primary font-semibold"
-          >
-            <IoEyeOutline />
-          </Link>
-          <span
-            onClick={() => {
-              deleteProductById(row.id);
-            }}
-            className=" inline-flex justify-center items-center w-8 h-8 text-2xl dark:text-white hover:scale-125 hover:text-red-500 dark:hover:text-red-500 font-semibold  "
-          >
-            <RiDeleteBin5Line />
-          </span>
-        </div>
-      ),
-    },
-  ];
+      {
+        name: `${language === "ar" ? "الاجراءت" : "Actions"}`,
+        cell: (row) => (
+          <div className="flex items-center  gap-2">
+            <Link
+              to={`/products/product-details?id=${row.id}&&name=${row.name}&&qty=${row.quantity}&&price=${row.price}&&img=${row.image}`}
+              className="inline-flex justify-center items-center w-8 h-8 text-2xl hover:scale-125 dark:text-white hover:text-primary dark:hover:text-primary font-semibold"
+            >
+              <IoEyeOutline />
+            </Link>
+            <span
+              onClick={() => {
+                deleteProductById(row.id);
+              }}
+              className=" inline-flex justify-center items-center w-8 h-8 text-2xl dark:text-white hover:scale-125 hover:text-red-500 dark:hover:text-red-500 font-semibold  "
+            >
+              <RiDeleteBin5Line />
+            </span>
+          </div>
+        ),
+      },
+    ],
+
+    [productData, dispatch]
+  );
 
   const [filterText, setFilterText] = useState("");
-  let productData = [];
-  if (data) {
-    productData = data;
-  } else {
-    productData = [];
-  }
 
   // const filteredItems = data?.filter(
   //   (item) =>
@@ -153,6 +159,7 @@ const Product_Table_Hook = (data, isLoading) => {
   const subHeaderComponentMemo = useMemo(() => {
     return (
       <div className="pb-4 w-full sm:w-64 ">
+        <div>{customeContainer()}</div>
         <CustomeInputs
           id="search"
           type="text"

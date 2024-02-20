@@ -18,11 +18,6 @@ const Products_Hook = () => {
     setData(products?.data);
   }, [dispatch, products]);
 
-  if (isLoading === false) {
-    if (data === null) {
-      dispatch(getAllProducts());
-    }
-  }
   return [t, isLoading, data];
 };
 

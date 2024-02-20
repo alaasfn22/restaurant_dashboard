@@ -1,4 +1,6 @@
 import axios from "axios";
+const baseURL = import.meta.env.VITE_API_URL;
+
 export const BASE_URL = axios.create({
-  baseURL: "https://academy-training.appssquare.com",
+  baseURL: `${baseURL}`,
 });
